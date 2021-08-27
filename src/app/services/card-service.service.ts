@@ -18,16 +18,12 @@ export class CardServiceService {
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
-    const tarotCard =  new Observable<Card[]>.pipe(
-      filter(data=> data.acana == "Major")).subscribe(this.url);
-);
-  // const tarotCard =  new Observable<Card[]>(
-  //   filter(function (data) {
-  //   return (data.acana == "Major")}),
-  //   map(data => this.httpClient.get<Card[]>(this.url))
-  // );
+    const tarotCard = of(new Observable<Card[]>).pipe(
+      filter(data=> data.acana == "Major"));
+    tarotCard.subscribe(listMajor=>this.httpClient.get<Card[]>(this.url),
+          listCups=>this.httpClient.get<Card[]>(this.urlCups));
+  }
 
-}
 
   // public list(): Observable<Card[]> {
   //   return this.httpClient.get<Card[]>('api/cards');
@@ -44,3 +40,5 @@ export class CardServiceService {
   // public getCups(id: string): Observable<Card> {
   //   return this.httpClient.get<Card>(`api/minor_cups/${id}`);
   // }
+  
+}

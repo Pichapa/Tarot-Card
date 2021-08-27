@@ -13,9 +13,6 @@ export class CardListComponent implements OnInit {
   constructor(private cardService: CardServiceService) {}
 
   ngOnInit(): void {
-    // this.cardService.tarotCard.subscribe((cards: Card[]) => {
-    //   this.cardList = cards;
-    // });
     // this.cardService.list().subscribe((cards: Card[]) => {
     //   this.cardList = cards;
     // });
