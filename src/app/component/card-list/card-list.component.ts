@@ -8,8 +8,8 @@ import { CardServiceService } from 'src/app/services/card-service.service';
   styleUrls: ['./card-list.component.scss'],
 })
 export class CardListComponent implements OnInit {
-  // cardList!: Card[];
-  // cardMinorCups!: Card[];
+  cardList!: Card[];
+  cardMinorCups!: Card[];
   constructor(private cardService: CardServiceService) {}
 
   ngOnInit(): void {

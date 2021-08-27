@@ -18,8 +18,8 @@ export class CardServiceService {
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
-    const tarotCard.pipe(
-      filter(value=> tarotCard.value.acana == "Major")).subscribe(this.url);
+    const tarotCard =  new Observable<Card[]>.pipe(
+      filter(data=> data.acana == "Major")).subscribe(this.url);
 );
   // const tarotCard =  new Observable<Card[]>(
   //   filter(function (data) {
