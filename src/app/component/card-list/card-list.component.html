@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <h1>Major Arcana</h1>
+        <div class="col-2" *ngFor="let item of cardList">
+            <a href="cards/{{item.id}}">
+                <div class="card">
+                    <img class="card-img-top" [src]="item.img">
+                    <div class="card-body">
+                        {{item.name}}
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <h1>Minor Arcana</h1>
+        <h3>Cups</h3>
+        <div class="col-2" *ngFor="let data of cardMinorCups">
+            <a href="minor_cups/{{data.id}}">
+                <div class="card">
+                    <img class="card-img-top" [src]="data.img">
+                    <div class="card-body">
+                        {{data.name}}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
